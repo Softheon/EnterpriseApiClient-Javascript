@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enterprise API Client Sample</title>
+    <link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css" />
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Enterprise REST API
+                <small>
+                    Javascript Client Sample
+                </small>
+            </h1>
+        </div>
+        <section>
+            <h3>Templates</h3>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Insert Template</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtInsertTemplateType">Template Type</label>
+                                <input type="number" class="form-control" id="txtInsertTemplateType" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_InsertTemplate()" disabled="disabled">Insert Template</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resInsertTemplate" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resInsertTemplate">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Get Template</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtGetTemplateType">Template Type</label>
+                                <input type="number" class="form-control" id="txtGetTemplateType" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_GetTemplate()" disabled="disabled">Get Template</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resGetTemplate" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resGetTemplate">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Update Template</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtUpdateTemplateType">Template Type</label>
+                                <input type="number" class="form-control" id="txtUpdateTemplateType" />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUpdateTemplateType">Template Name</label>
+                                <input type="text" class="form-control" id="txtUpdateTemplateName" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_UpdateTemplate()" disabled="disabled">Update Template</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resUpdateTemplate" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resUpdateTemplate">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Delete Template</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtDeleteTemplateType">Template Type</label>
+                                <input type="number" class="form-control" id="txtDeleteTemplateType" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_DeleteTemplate()" disabled="disabled">Delete Template</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resDeleteTemplate" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resDeleteTemplate">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr/>
+        <section>
+            <h3>Entites</h3>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Insert Entity</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtInsertEntityType">Entity Type</label>
+                                <input type="number" class="form-control" id="txtInsertEntityType" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_InsertEntity()" disabled="disabled">Insert Entity</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resInsertEntity" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resInsertEntity">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Get Entity</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtGetEntityID">Entity ID</label>
+                                <input type="number" class="form-control" id="txtGetEntityID" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_GetEntity()" disabled="disabled">Get Entity</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-target="#resGetEntity" aria-expanded="false"
+                                    aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resGetEntity">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Update Entity</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtUpdateEntityID">Entity ID</label>
+                                <input type="number" class="form-control" id="txtUpdateEntityID" />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUpdateEntityPhrase">Phrase</label>
+                                <input type="text" class="form-control" id="txtUpdateEntityPhrase" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_UpdateEntity()" disabled="disabled">Update Entity</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-tarUpdate="#resUpdateEntity"
+                                    aria-expanded="false" aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resUpdateEntity">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="lead">Delete Entity</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="txtDeleteEntityID">Entity ID</label>
+                                <input type="number" class="form-control" id="txtDeleteEntityID" />
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="onclick_DeleteEntity()" disabled="disabled">Delete Entity</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>
+                                Response
+                                <button class="btn btn-xs btn-default pull-right" type="button" data-toggle="collapse" data-tarDelete="#resDeleteEntity"
+                                    aria-expanded="false" aria-controls="collapseExample">Show/Hide</button>
+                            </h5>
+                            <div class="well collapse" id="resDeleteEntity">
+                                <h4><span class="label"></span></h4>
+                                <code class="response" style="word-wrap: break-word"></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="scripts/identity.js"></script>
+    <script type="text/javascript" src="scripts/templates.js"></script>
+    <script type="text/javascript" src="scripts/folders.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+
+</html>
