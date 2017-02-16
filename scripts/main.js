@@ -1,5 +1,5 @@
 // Global Parameters
-var global_enterpriseEndpointUri = "http://localhost/api/enterprise";
+var global_enterpriseEndpointUri = "https://hack.softheon.io/api/enterprise";
 var global_tokenEndpointUri = "https://hack.softheon.io/api/identity/core/connect/token";
 var global_clientId = "hack001";
 var global_clientSecret = "hack001";
