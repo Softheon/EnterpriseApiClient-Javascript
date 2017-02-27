@@ -1,9 +1,9 @@
 /**
- * Gets the folder with the ID
+ * Gets the entity with the ID
  */
 function getEntity(apiUri, token, drawer, id, callback) {
-    // https://hack.softheon.io/api/enterprise/content/v1/folder/{drawer}/{id}
-    var url = apiUri + "/content/v1/folder/" + drawer + "/" + id;
+    // https://hack.softheon.io/api/enterprise/content/v1/entity/{drawer}/{id}
+    var url = apiUri + "/content/v1/entity/" + drawer + "/" + id;
 
     var settings = {
         "async": true,
@@ -27,13 +27,13 @@ function getEntity(apiUri, token, drawer, id, callback) {
 }
 
 /**
- * Inserts a folder of the specified type
+ * Inserts a entity of the specified type
  */
 function insertEntity(apiUri, token, drawer, type, callback) {
-    // https://hack.softheon.io/api/enterprise/content/v1/folder/{drawer}
-    var url = apiUri + "/content/v1/folder/" + drawer;
+    // https://hack.softheon.io/api/enterprise/content/v1/entity/{drawer}
+    var url = apiUri + "/content/v1/entity/" + drawer;
 
-    var folder = {
+    var entity = {
         "Acl": -1,
         "Type": type,
         "Name": "EnterpriseClientSample - Javascript",
@@ -88,7 +88,7 @@ function insertEntity(apiUri, token, drawer, type, callback) {
             "content-type": "application/json"
         },
         "processData": false,
-        "data": JSON.stringify(folder),
+        "data": JSON.stringify(entity),
         success: function (data, textStatus, xhr) {
             callback(xhr.status, data);
         },
@@ -103,11 +103,11 @@ function insertEntity(apiUri, token, drawer, type, callback) {
 }
 
 /**
- * Updates a folder with the specified ID
+ * Updates a entity with the specified ID
  */
-function updateEntity(apiUri, token, drawer, id, folder, callback) {
-    // https://hack.softheon.io/api/enterprise/content/v1/folder/{drawer}/{id}
-    var url = apiUri + "/content/v1/folder/" + drawer + "/" + id;
+function updateEntity(apiUri, token, drawer, id, entity, callback) {
+    // https://hack.softheon.io/api/enterprise/content/v1/entity/{drawer}/{id}
+    var url = apiUri + "/content/v1/entity/" + drawer + "/" + id;
 
     var settings = {
         "async": true,
@@ -119,7 +119,7 @@ function updateEntity(apiUri, token, drawer, id, folder, callback) {
             "content-type": "application/json"
         },
         "processData": false,
-        "data": JSON.stringify(folder),
+        "data": JSON.stringify(entity),
         success: function (data, textStatus, xhr) {
             callback(xhr.status, data);
         },
@@ -134,11 +134,11 @@ function updateEntity(apiUri, token, drawer, id, folder, callback) {
 }
 
 /**
- * Deletes the folder with the ID
+ * Deletes the entity with the ID
  */
 function deleteEntity(apiUri, token, drawer, id, callback) {
-    // https://hack.softheon.io/api/enterprise/content/v1/folder/{drawer}/{id}
-    var url = apiUri + "/content/v1/folder/" + drawer + "/" + id;
+    // https://hack.softheon.io/api/enterprise/content/v1/entity/{drawer}/{id}
+    var url = apiUri + "/content/v1/entity/" + drawer + "/" + id;
 
     var settings = {
         "async": true,
